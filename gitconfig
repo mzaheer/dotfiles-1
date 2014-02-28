@@ -11,3 +11,5 @@
   llog = log --date=local
 [rerere]
   enabled = true
+[push]
+	default = simple
