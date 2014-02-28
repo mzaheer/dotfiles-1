@@ -49,8 +49,8 @@ export PS1="\[\033[01;32m\]takhyon:$CYAN2\w$WHITE\$(parse_git_branch)\$ "
 #    else echo "'$CYAN'"$(__git_ps1 " (%s)")
 #    fi)'$BLUE" \w"$GREEN": "
 
-alias ls='ls -GFh'
-alias ll='ls -lah'
+alias ls='ls -GFh --color=auto'
+alias ll='ls -lah --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
