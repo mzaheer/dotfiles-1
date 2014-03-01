@@ -36,19 +36,6 @@ export GIT_EDITOR=/usr/bin/vim
 
 export PS1="\[\033[01;32m\]takhyon:$CYAN2\w$WHITE\$(parse_git_branch)\$ "
 
-#export PS1=$(__git_ps1)
-
-#export PS1=$LIGHT_GRAY"\u@\h"'$(
-#    if [[ $(__git_ps1) =~ \*\)$ ]]
-#    # a file has been modified but not added
-#    then echo "'$YELLOW'"$(__git_ps1 " (%s)")
-#    elif [[ $(__git_ps1) =~ \+\)$ ]]
-#    # a file has been added, but not commited
-#    then echo "'$MAGENTA'"$(__git_ps1 " (%s)")
-#    # the state is clean, changes are commited
-#    else echo "'$CYAN'"$(__git_ps1 " (%s)")
-#    fi)'$BLUE" \w"$GREEN": "
-
 alias ls='ls -GFh --color=auto'
 alias ll='ls -lah --color=auto'
 alias grep='grep --color=auto'
