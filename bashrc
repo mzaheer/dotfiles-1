@@ -5,11 +5,13 @@ source ~/.git-prompt.sh
 
 MAGENTA="\[\033[0;35m\]"
 YELLOW="\[\033[0;33m\]"
+YELLOW_BOLD="\[\033[1;33m\]"
 BLUE="\[\033[34m\]"
 LIGHT_GRAY="\[\033[0;37m\]"
 CYAN="\[\033[0;36m\]"
 CYAN_BOLD="\[\033[01;36m\]"
 GREEN="\[\033[0;32m\]"
+GREEN_BOLD="\[\033[1;32m\]"
 WHITE="\[\033[00m\]"
 
 case "$OSTYPE" in
@@ -46,6 +48,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export LC_CTYPE=UTF-8
-export PS1="\[\033[01;32m\]takhyon:$CYAN_BOLD\w$WHITE\$(parse_git_branch)\$ "
+export PS1="${GREEN_BOLD}takhyon:$CYAN_BOLD\w$WHITE\$(parse_git_branch)\$ "
+export PS2="${YELLOW_BOLD}continue-> "
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
