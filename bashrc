@@ -18,7 +18,9 @@ case "$OSTYPE" in
   darwin*)
     alias ls='ls -GF'
     alias ll='ls -lah'
+    alias mate='~/bin/mate'
     export LSCOLORS=GxFxCxDxBxegedabagaced
+    export EDITOR='mate -w'
   ;;
   linux*)
     alias ls='ls -F --color=auto'
