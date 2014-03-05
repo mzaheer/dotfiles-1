@@ -2,7 +2,19 @@
   name = Salvatore Realmuto
   email = srealmuto@ise.com
 [color]
-  ui = auto
+  ui = true
+[color "branch"]
+  current = yellow black
+  local = yellow
+  remote = magenta
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  whitespace = white reverse
+[color "status"]
+  added = yellow
+  untracked = cyan reverse
+  branch = magenta
 [alias]
   st = status
   di = diff
