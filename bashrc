@@ -20,7 +20,8 @@ case "$OSTYPE" in
     alias ll='ls -lah'
     alias mate='~/bin/mate'
     export LSCOLORS=GxFxCxDxBxegedabagaced
-    export EDITOR='mate -w'
+    export EDITOR='mate -w'i
+#   export ARCHFLAGS="-Wno-error=unused-command-line-argument-hard-error-in-future"
   ;;
   linux*)
     alias ls='ls -F --color=auto'
