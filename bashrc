@@ -54,4 +54,4 @@ export LC_CTYPE=UTF-8
 export PS1="${GREEN_BOLD}takhyon:$CYAN_BOLD\w$WHITE\$(parse_git_branch)\$ "
 export PS2="${YELLOW_BOLD}continue-> "
 
-PATH=$PATH:$HOME/.rvm/bin:$HOME # Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin:$HOME:$HOME/workspace/chocopackages/helpful_files:$HOME/workspace/puppet/helpful_files # Add RVM to PATH for scripting
