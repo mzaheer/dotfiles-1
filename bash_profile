@@ -7,8 +7,8 @@ case "$OSTYPE" in
     #
   ;;
   linux*)
-    export PATH="$HOME/.parts/autoparts/bin:$PATH"
-    eval "$(parts init -)"
+    # export PATH="$HOME/.parts/autoparts/bin:$PATH"
+    # eval "$(parts init -)"
   ;;
 esac
 
