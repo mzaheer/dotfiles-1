@@ -18,7 +18,15 @@
   deleted = red bold
   branch = yellow bold
 [alias]
-  st = status
+  authors = shortlog -sn
+  behind = !git log ..upstream/production --oneline
+  ahead = !git log upstream/production.. --oneline
+  upstream = !git cherry upstream/production
+  files = !git diff --name-only upstream/production..
+  dupes = !git rev-list --objects --all | cut -c1-7 | sort | uniq -c | grep -v '^ *1'
+  count = !git shortlog -n --no-merges --since '{last friday at 09:30:00}'
+  undo = reset HEAD@{1}
+	et = status
   di = diff
   ci = commit
   br = branch
