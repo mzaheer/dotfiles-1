@@ -24,7 +24,8 @@ case "$OSTYPE" in
     export EDITOR='mate -w'i
 #   export ARCHFLAGS="-Wno-error=unused-command-line-argument-hard-error-in-future"
   ;;
-  linux*)
+linux*)
+    LS_COLORS=$LS_COLORS:'di=1;35:' ; export LS_COLORS
     alias ls='ls -F --color=auto'
     alias ll='ls -lah'
     alias vi='vim'
