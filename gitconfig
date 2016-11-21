@@ -26,6 +26,7 @@
   dupes = !git rev-list --objects --all | cut -c1-7 | sort | uniq -c | grep -v '^ *1'
   count = !git shortlog -n --no-merges --since '{last friday at 09:30:00}'
   undo = reset HEAD@{1}
+  lg = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
   et = status
   di = diff
   ci = commit
