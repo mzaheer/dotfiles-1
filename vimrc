@@ -4,6 +4,7 @@
 set fo=tcq
 set nocompatible
 set modeline
+set paste
 
 syntax on
 
