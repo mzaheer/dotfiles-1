@@ -15,7 +15,7 @@ highlight comment ctermfg=cyan
 set tabstop=2
 set expandtab
 set softtabstop=2
-set shiftwidth=2
+set shiftwidth=4
 set number
 set bg=dark
 set hlsearch
