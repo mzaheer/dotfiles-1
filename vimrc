@@ -4,7 +4,7 @@
 set fo=tcq
 set nocompatible
 set modeline
-" set paste
+set pastetoggle=<F1>
 
 syntax on
 
