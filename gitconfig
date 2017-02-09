@@ -31,6 +31,8 @@
   di = diff
   ci = commit
   br = branch
+  co = checkout
+  cob = !git checkout -b
   llog = log --date=local
 [rerere]
   enabled = true
