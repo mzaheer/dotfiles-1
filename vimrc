@@ -5,12 +5,13 @@ set fo=tcq
 set nocompatible
 set modeline
 set pastetoggle=<F1>
+set backspace=indent,eol,start
 
 syntax on
 
 " set default comment color to cyan instead of darkblue
 " which is not very legible on a black background
-highlight comment ctermfg=cyan
+"highlight comment ctermfg=cyan
 
 set tabstop=2
 set expandtab
@@ -20,10 +21,6 @@ set number
 set bg=dark
 set hlsearch
 
-highlight LiteralTabs ctermbg=darkgreen guibg=darkgreen
-match LiteralTabs /\s\	/
-highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
-match ExtraWhitespace /\s\+$/
 
 " Show me a ruler
 set ruler
@@ -36,3 +33,28 @@ au BufRead,BufNewFile *_spec.rb
 
 " Enable indentation matching for =>'s
 filetype plugin indent on
+
+let &t_SI.="\e[5 q"
+let &t_SR.="\e[4 q"
+let &t_EI.="\e[1 q"
+
+" Terraform vim Plugin Options
+let g:terraform_fmt_on_save=1
+let g:terraform_align=1
+
+source /Users/salrea/.vim/colors/solarized.vim
+set t_Co=256
+
+"autocmd BufEnter *.tf* colorscheme icansee
+syntax enable
+set background=dark
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+let g:solarized_contrast="normal"
+let g:solarized_visibility="high"
+colorscheme solarized
+
+highlight LiteralTabs ctermbg=darkgreen guibg=darkgreen
+match LiteralTabs /\s\	/
+highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+match ExtraWhitespace /\s\+$/

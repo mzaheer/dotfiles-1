@@ -1,4 +1,4 @@
-[ -z "$PS1" ] && return
+#sour[ -z "$PS1" ] && return
 
 source ~/.git-completion.bash
 source ~/.git-prompt.sh
@@ -21,6 +21,7 @@ case "$OSTYPE" in
     alias ll='ls -lah'
     alias mate='~/bin/mate'
     alias vi='vim'
+    alias kc='kubectl'
     export LSCOLORS=GxFxCxDxBxegedabagaced
     export EDITOR='mate -w'i
 #   export ARCHFLAGS="-Wno-error=unused-command-line-argument-hard-error-in-future"
@@ -48,6 +49,7 @@ alias vi='vim'
 alias cd..='cd ..'
 alias cd~='cd ~'
 alias ppcd='cd ~/workspace/puppet/'
+alias cdr='cd $(git rev-parse --show-toplevel)'
 
 export EDITOR=/usr/bin/vim
 export GIT_EDITOR=/usr/bin/vim
@@ -55,7 +57,23 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export LC_CTYPE=UTF-8
-export PS1="${GREEN_BOLD}takhyon:$CYAN_BOLD\w$WHITE\$(parse_git_branch)\$ "
+export PS1="${GREEN_BOLD}takhyon:$CYAN_BOLD\W$WHITE\$(parse_git_branch)\$ "
 export PS2="${YELLOW_BOLD}continue-> "
 
-PATH=$PATH:$HOME/.rvm/bin:$HOME:$HOME/Workspace.ISE/chocopackages/helpful_files:$HOME/Workspace.ISE/puppet/helpful_files # Add RVM to PATH for scripting
+# COOP PROXY STUFF
+#export http_proxy=http://us02cbcsg01.org.nasdaqomx.com:8080/
+#export https_proxy=${http_proxy}
+#export HTTP_PROXY=${http_proxy}
+#export HTTPS_PROXY=${http_proxy}
+#export no_proxy="localhost, 127.0.0.1, localaddress, *localdomain.com, localdomain.com, *.local, 169.254/16, *.nasdaq.com, nasdaq.com, *nasdaqomx.com, nasdaqomx.com, *ften.com, tfe.ops.nadq2universalservices.gi.nadq.ci, psregistry.ndaquniversalservices.com"
+#export NO_PROXY=${no_proxy}
+
+HISTSIZE=500
+HISTFILESIZE=500
+HISTFILE=$HOME/.bash_history
+export HISTCONTROL=ignoredups:erasedups
+shopt -s histappend
+
+PATH=$PATH:$HOME/.rvm/bin:$HOME:$HOME/Workspace.ISE/chocopackages/helpful_files:$HOME/Workspace.ISE/puppet/helpful_files:$HOME/Workspace/helpful-files # Add RVM to PATH for scripting
+
+export EDITOR="/usr/local/bin/mate -w"

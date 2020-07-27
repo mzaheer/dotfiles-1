@@ -4,7 +4,7 @@
 [color]
   ui = true
 [color "branch"]
-  current = yellow reverse
+  current = cyan bold
   local = yellow
   remote = green
 [color "diff"]
@@ -19,13 +19,19 @@
   branch = yellow bold
 [alias]
   authors = shortlog -sn
-  behind = !git log ..upstream/master --oneline
-  ahead = !git log upstream/master.. --oneline
+  behind = !git log ..origin/master --oneline
+  ahead = !git log origin/master.. --oneline
   upstream = !git cherry upstream/master
   files = !git diff --name-only upstream/master..
   dupes = !git rev-list --objects --all | cut -c1-7 | sort | uniq -c | grep -v '^ *1'
   count = !git shortlog -n --no-merges --since '{last friday at 09:30:00}'
   undo = reset HEAD@{1}
+  me = !git rev-parse --abbrev-ref HEAD
+  up = !git push origin -u $(git me)
+  down = !git push origin --delete $(git me)
+  acm = !git add . && echo 'Staged all changes, if any.' && git commit -m $message
+  fixup = "!f() { TARGET=$(git rev-parse "$1"); git commit --fixup=$TARGET ${@:2} && EDITOR=true git rebase -i --autostash --autosquash $TARGET^; }; f"
+  la = !git config -l | grep alias
   lg = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
   et = status
   di = diff
@@ -34,7 +40,14 @@
   co = checkout
   cob = !git checkout -b
   llog = log --date=local
+  fop = !git fetch origin --prune
+  reb = !git fetch origin --prune && git rebase
 [rerere]
   enabled = true
 [push]
   default = simple
+[remote "upstream"]
+  fetch = +refs/heads/*:refs/remotes/upstream/*
+  fetch = +refs/pull-requests/*/from:refs/remotes/upstream/pr/*
+[pull]
+	rebase = true
